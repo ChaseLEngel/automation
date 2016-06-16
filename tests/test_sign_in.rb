@@ -1,7 +1,7 @@
 require 'minitest/autorun'
-require_relative 'driver'
-require_relative 'sign_in_page'
-require_relative 'home_page'
+require_relative '../driver'
+require_relative '../pages/sign_in_page'
+require_relative '../pages/home_page'
 
 class TestSignIn < Minitest::Test
   def setup

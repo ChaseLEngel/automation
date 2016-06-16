@@ -1,8 +1,8 @@
-require_relative 'driver'
+require_relative '../driver'
+require_relative 'sign_in_page'
 
-class SignInPage
-
-  URL = 'https://vsco.co/user/login'
+class HomePage
+  URL = 'https://vsco.co'
 
   def initialize
     @browser = Driver.instance.browser
@@ -15,8 +15,8 @@ class SignInPage
     @browser.send(method, *args, &block)
   end
 
-  def click_sign_in_button
-    @browser.button(id: 'loginButton').click
+  def click_sign_in_link
+    @browser.link(text: 'Sign in').click
+    SignInPage.new
   end
-
 end
